@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		185A7A101BD5C0F9006D9855 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A0F1BD5C0F9006D9855 /* Gun.swift */; settings = {ASSET_TAGS = (); }; };
+		185A7A121BD5CE76006D9855 /* ObjectPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A111BD5CE76006D9855 /* ObjectPool.swift */; settings = {ASSET_TAGS = (); }; };
+		185A7A141BD5DB49006D9855 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A131BD5DB49006D9855 /* Bullet.swift */; settings = {ASSET_TAGS = (); }; };
+		DC12270D1A8867E1003EA64F /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12270C1A8867E1003EA64F /* Bee.swift */; };
+		DC12270F1A887A41003EA64F /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12270E1A887A41003EA64F /* GameSprite.swift */; };
+		DC16B1AC1A8F16D2005216E0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16B1AB1A8F16D2005216E0 /* Player.swift */; };
+		DC1A0EF21A8B1CB8000C25EA /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DC1A0EF11A8B1CB8000C25EA /* ground.atlas */; };
+		DC3277BA1AE3827500866448 /* PierrePath.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC3277B81AE3827500866448 /* PierrePath.sks */; };
+		DC3277BB1AE3827500866448 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3277B91AE3827500866448 /* spark.png */; };
+		DC4803291AAAF8AE002CB005 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4803281AAAF8AE002CB005 /* Star.swift */; };
+		DC48032B1AAB0571002CB005 /* MadFly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48032A1AAB0571002CB005 /* MadFly.swift */; };
+		DC5CFEA81A89E3E70018553B /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5CFEA71A89E3E70018553B /* Ground.swift */; };
+		DC6B7CF71ADDF8C20041DF0B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B7CF61ADDF8C20041DF0B /* HUD.swift */; };
+		DC70B0031AF98FF10057C2FD /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70B0021AF98FF10057C2FD /* MenuScene.swift */; };
+		DC70B0091AF993820057C2FD /* hud.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DC70B0081AF993820057C2FD /* hud.atlas */; };
+		DC70B00B1AF9AE2E0057C2FD /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = DC70B00A1AF9AE2E0057C2FD /* Sound */; };
+		DC722AF91A91926600F75DC9 /* pierre.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DC722AF81A91926600F75DC9 /* pierre.atlas */; };
+		DC7370911ABFB717000EA3C5 /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7370901ABFB717000EA3C5 /* EncounterManager.swift */; };
+		DC7370951ABFBE48000EA3C5 /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC7370921ABFBE48000EA3C5 /* EncounterBats.sks */; };
+		DC73709A1ABFD67D000EA3C5 /* EncounterBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC7370981ABFD67D000EA3C5 /* EncounterBees.sks */; };
+		DC7895931AE3662700E303E6 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7895921AE3662700E303E6 /* Background.swift */; };
+		DC8C2DAB1ABFD75100E8C66C /* EncounterCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC8C2DAA1ABFD75100E8C66C /* EncounterCoins.sks */; };
+		DC8EE7371A80A7FE002304EC /* bee.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DC8EE7361A80A7FE002304EC /* bee.atlas */; };
+		DC9FD4281A70EF4E00091A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FD4271A70EF4E00091A4E /* AppDelegate.swift */; };
+		DC9FD42C1A70EF4E00091A4E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FD42B1A70EF4E00091A4E /* GameScene.swift */; };
+		DC9FD42E1A70EF4E00091A4E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FD42D1A70EF4E00091A4E /* GameViewController.swift */; };
+		DC9FD4311A70EF4E00091A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FD42F1A70EF4E00091A4E /* Main.storyboard */; };
+		DC9FD4331A70EF4E00091A4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FD4321A70EF4E00091A4E /* Images.xcassets */; };
+		DC9FD4361A70EF4E00091A4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9FD4341A70EF4E00091A4E /* LaunchScreen.xib */; };
+		DC9FD4421A70EF4E00091A4E /* Pierre_Penguin_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FD4411A70EF4E00091A4E /* Pierre_Penguin_Escapes_the_AntarcticTests.swift */; };
+		DCEF50481AACD02500E78D30 /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF50471AACD02500E78D30 /* Bat.swift */; };
+		DCEF504A1AACD7DD00E78D30 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF50491AACD7DD00E78D30 /* Ghost.swift */; };
+		DCEF504C1AACDE6100E78D30 /* Blade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF504B1AACDE6100E78D30 /* Blade.swift */; };
+		DCEF50521AACE2B300E78D30 /* enemies.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DCEF50511AACE2B300E78D30 /* enemies.atlas */; };
+		DCEF50581AACEAEC00E78D30 /* goods.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DCEF50571AACEAEC00E78D30 /* goods.atlas */; };
+		DCEF505A1AACECFD00E78D30 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF50591AACECFD00E78D30 /* Coin.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC9FD43C1A70EF4E00091A4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC9FD41A1A70EF4D00091A4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC9FD4211A70EF4D00091A4E;
+			remoteInfo = "Pierre Penguin Escapes the Antarctic";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		185A7A0F1BD5C0F9006D9855 /* Gun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
+		185A7A111BD5CE76006D9855 /* ObjectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectPool.swift; sourceTree = "<group>"; };
+		185A7A131BD5DB49006D9855 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		DC12270C1A8867E1003EA64F /* Bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		DC12270E1A887A41003EA64F /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
+		DC16B1AB1A8F16D2005216E0 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DC1A0EF11A8B1CB8000C25EA /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = ground.atlas; sourceTree = "<group>"; };
+		DC3277B81AE3827500866448 /* PierrePath.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PierrePath.sks; sourceTree = "<group>"; };
+		DC3277B91AE3827500866448 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		DC4803281AAAF8AE002CB005 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		DC48032A1AAB0571002CB005 /* MadFly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadFly.swift; sourceTree = "<group>"; };
+		DC5CFEA71A89E3E70018553B /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		DC6B7CF61ADDF8C20041DF0B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		DC70B0021AF98FF10057C2FD /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		DC70B0081AF993820057C2FD /* hud.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = hud.atlas; sourceTree = "<group>"; };
+		DC70B00A1AF9AE2E0057C2FD /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
+		DC722AF81A91926600F75DC9 /* pierre.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pierre.atlas; sourceTree = "<group>"; };
+		DC7370901ABFB717000EA3C5 /* EncounterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
+		DC7370921ABFBE48000EA3C5 /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
+		DC7370981ABFD67D000EA3C5 /* EncounterBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBees.sks; sourceTree = "<group>"; };
+		DC7895921AE3662700E303E6 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		DC8C2DAA1ABFD75100E8C66C /* EncounterCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterCoins.sks; sourceTree = "<group>"; };
+		DC8EE7361A80A7FE002304EC /* bee.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bee.atlas; sourceTree = "<group>"; };
+		DC9FD4221A70EF4E00091A4E /* Pierre Penguin Escapes the Antarctic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pierre Penguin Escapes the Antarctic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9FD4261A70EF4E00091A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9FD4271A70EF4E00091A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC9FD42B1A70EF4E00091A4E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		DC9FD42D1A70EF4E00091A4E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DC9FD4301A70EF4E00091A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC9FD4321A70EF4E00091A4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC9FD4351A70EF4E00091A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DC9FD43B1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pierre Penguin Escapes the AntarcticTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9FD4401A70EF4E00091A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9FD4411A70EF4E00091A4E /* Pierre_Penguin_Escapes_the_AntarcticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pierre_Penguin_Escapes_the_AntarcticTests.swift; sourceTree = "<group>"; };
+		DCEF50471AACD02500E78D30 /* Bat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
+		DCEF50491AACD7DD00E78D30 /* Ghost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
+		DCEF504B1AACDE6100E78D30 /* Blade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blade.swift; sourceTree = "<group>"; };
+		DCEF50511AACE2B300E78D30 /* enemies.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemies.atlas; sourceTree = "<group>"; };
+		DCEF50571AACEAEC00E78D30 /* goods.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = goods.atlas; sourceTree = "<group>"; };
+		DCEF50591AACECFD00E78D30 /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC9FD41F1A70EF4D00091A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9FD4381A70EF4E00091A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		185A7A151BD6D84F006D9855 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				DC3277B91AE3827500866448 /* spark.png */,
+				DC70B00A1AF9AE2E0057C2FD /* Sound */,
+				DC8EE7361A80A7FE002304EC /* bee.atlas */,
+				DCEF50511AACE2B300E78D30 /* enemies.atlas */,
+				DCEF50571AACEAEC00E78D30 /* goods.atlas */,
+				DC1A0EF11A8B1CB8000C25EA /* ground.atlas */,
+				DC70B0081AF993820057C2FD /* hud.atlas */,
+				DC722AF81A91926600F75DC9 /* pierre.atlas */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		DC9FD4191A70EF4D00091A4E = {
+			isa = PBXGroup;
+			children = (
+				DC9FD4241A70EF4E00091A4E /* Pierre Penguin Escapes the Antarctic */,
+				DC9FD43E1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests */,
+				DC9FD4231A70EF4E00091A4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC9FD4231A70EF4E00091A4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FD4221A70EF4E00091A4E /* Pierre Penguin Escapes the Antarctic.app */,
+				DC9FD43B1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC9FD4241A70EF4E00091A4E /* Pierre Penguin Escapes the Antarctic */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FD42B1A70EF4E00091A4E /* GameScene.swift */,
+				DC9FD42D1A70EF4E00091A4E /* GameViewController.swift */,
+				DC6B7CF61ADDF8C20041DF0B /* HUD.swift */,
+				DC70B0021AF98FF10057C2FD /* MenuScene.swift */,
+				185A7A111BD5CE76006D9855 /* ObjectPool.swift */,
+				DC9FD4321A70EF4E00091A4E /* Images.xcassets */,
+				DCD77CF41ABE323C002DE858 /* sprites */,
+				185A7A151BD6D84F006D9855 /* source */,
+				DC9FD4251A70EF4E00091A4E /* Supporting Files */,
+			);
+			path = "Pierre Penguin Escapes the Antarctic";
+			sourceTree = "<group>";
+		};
+		DC9FD4251A70EF4E00091A4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FD42F1A70EF4E00091A4E /* Main.storyboard */,
+				DC9FD4341A70EF4E00091A4E /* LaunchScreen.xib */,
+				DC9FD4271A70EF4E00091A4E /* AppDelegate.swift */,
+				DC9FD4261A70EF4E00091A4E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC9FD43E1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FD4411A70EF4E00091A4E /* Pierre_Penguin_Escapes_the_AntarcticTests.swift */,
+				DC9FD43F1A70EF4E00091A4E /* Supporting Files */,
+			);
+			path = "Pierre Penguin Escapes the AntarcticTests";
+			sourceTree = "<group>";
+		};
+		DC9FD43F1A70EF4E00091A4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FD4401A70EF4E00091A4E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCD77CF41ABE323C002DE858 /* sprites */ = {
+			isa = PBXGroup;
+			children = (
+				DC7370901ABFB717000EA3C5 /* EncounterManager.swift */,
+				DC16B1AB1A8F16D2005216E0 /* Player.swift */,
+				185A7A0F1BD5C0F9006D9855 /* Gun.swift */,
+				DC5CFEA71A89E3E70018553B /* Ground.swift */,
+				DC7895921AE3662700E303E6 /* Background.swift */,
+				DC12270E1A887A41003EA64F /* GameSprite.swift */,
+				185A7A131BD5DB49006D9855 /* Bullet.swift */,
+				DCEF50491AACD7DD00E78D30 /* Ghost.swift */,
+				DCEF50591AACECFD00E78D30 /* Coin.swift */,
+				DC4803281AAAF8AE002CB005 /* Star.swift */,
+				DC48032A1AAB0571002CB005 /* MadFly.swift */,
+				DCEF50471AACD02500E78D30 /* Bat.swift */,
+				DC12270C1A8867E1003EA64F /* Bee.swift */,
+				DCEF504B1AACDE6100E78D30 /* Blade.swift */,
+				DC7370921ABFBE48000EA3C5 /* EncounterBats.sks */,
+				DC7370981ABFD67D000EA3C5 /* EncounterBees.sks */,
+				DC8C2DAA1ABFD75100E8C66C /* EncounterCoins.sks */,
+				DC3277B81AE3827500866448 /* PierrePath.sks */,
+			);
+			name = sprites;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC9FD4211A70EF4D00091A4E /* Pierre Penguin Escapes the Antarctic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9FD4451A70EF4E00091A4E /* Build configuration list for PBXNativeTarget "Pierre Penguin Escapes the Antarctic" */;
+			buildPhases = (
+				DC9FD41E1A70EF4D00091A4E /* Sources */,
+				DC9FD41F1A70EF4D00091A4E /* Frameworks */,
+				DC9FD4201A70EF4D00091A4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pierre Penguin Escapes the Antarctic";
+			productName = "Pierre Penguin Escapes the Antarctic";
+			productReference = DC9FD4221A70EF4E00091A4E /* Pierre Penguin Escapes the Antarctic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC9FD43A1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9FD4481A70EF4E00091A4E /* Build configuration list for PBXNativeTarget "Pierre Penguin Escapes the AntarcticTests" */;
+			buildPhases = (
+				DC9FD4371A70EF4E00091A4E /* Sources */,
+				DC9FD4381A70EF4E00091A4E /* Frameworks */,
+				DC9FD4391A70EF4E00091A4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC9FD43D1A70EF4E00091A4E /* PBXTargetDependency */,
+			);
+			name = "Pierre Penguin Escapes the AntarcticTests";
+			productName = "Pierre Penguin Escapes the AntarcticTests";
+			productReference = DC9FD43B1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC9FD41A1A70EF4D00091A4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = ThinkingSwiftly.com;
+				TargetAttributes = {
+					DC9FD4211A70EF4D00091A4E = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = LPHU8N4H3U;
+					};
+					DC9FD43A1A70EF4E00091A4E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = DC9FD4211A70EF4D00091A4E;
+					};
+				};
+			};
+			buildConfigurationList = DC9FD41D1A70EF4D00091A4E /* Build configuration list for PBXProject "Pierre Penguin Escapes the Antarctic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC9FD4191A70EF4D00091A4E;
+			productRefGroup = DC9FD4231A70EF4E00091A4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC9FD4211A70EF4D00091A4E /* Pierre Penguin Escapes the Antarctic */,
+				DC9FD43A1A70EF4E00091A4E /* Pierre Penguin Escapes the AntarcticTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC9FD4201A70EF4D00091A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC8EE7371A80A7FE002304EC /* bee.atlas in Resources */,
+				DC9FD4361A70EF4E00091A4E /* LaunchScreen.xib in Resources */,
+				DC3277BB1AE3827500866448 /* spark.png in Resources */,
+				DCEF50581AACEAEC00E78D30 /* goods.atlas in Resources */,
+				DC9FD4331A70EF4E00091A4E /* Images.xcassets in Resources */,
+				DC7370951ABFBE48000EA3C5 /* EncounterBats.sks in Resources */,
+				DC9FD4311A70EF4E00091A4E /* Main.storyboard in Resources */,
+				DC722AF91A91926600F75DC9 /* pierre.atlas in Resources */,
+				DCEF50521AACE2B300E78D30 /* enemies.atlas in Resources */,
+				DC3277BA1AE3827500866448 /* PierrePath.sks in Resources */,
+				DC73709A1ABFD67D000EA3C5 /* EncounterBees.sks in Resources */,
+				DC70B0091AF993820057C2FD /* hud.atlas in Resources */,
+				DC70B00B1AF9AE2E0057C2FD /* Sound in Resources */,
+				DC8C2DAB1ABFD75100E8C66C /* EncounterCoins.sks in Resources */,
+				DC1A0EF21A8B1CB8000C25EA /* ground.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9FD4391A70EF4E00091A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC9FD41E1A70EF4D00091A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70B0031AF98FF10057C2FD /* MenuScene.swift in Sources */,
+				DC5CFEA81A89E3E70018553B /* Ground.swift in Sources */,
+				DC7370911ABFB717000EA3C5 /* EncounterManager.swift in Sources */,
+				DC9FD42C1A70EF4E00091A4E /* GameScene.swift in Sources */,
+				DCEF504C1AACDE6100E78D30 /* Blade.swift in Sources */,
+				DC12270D1A8867E1003EA64F /* Bee.swift in Sources */,
+				DC9FD42E1A70EF4E00091A4E /* GameViewController.swift in Sources */,
+				185A7A141BD5DB49006D9855 /* Bullet.swift in Sources */,
+				DC6B7CF71ADDF8C20041DF0B /* HUD.swift in Sources */,
+				DCEF504A1AACD7DD00E78D30 /* Ghost.swift in Sources */,
+				185A7A121BD5CE76006D9855 /* ObjectPool.swift in Sources */,
+				DC16B1AC1A8F16D2005216E0 /* Player.swift in Sources */,
+				185A7A101BD5C0F9006D9855 /* Gun.swift in Sources */,
+				DCEF50481AACD02500E78D30 /* Bat.swift in Sources */,
+				DC12270F1A887A41003EA64F /* GameSprite.swift in Sources */,
+				DC7895931AE3662700E303E6 /* Background.swift in Sources */,
+				DC9FD4281A70EF4E00091A4E /* AppDelegate.swift in Sources */,
+				DC48032B1AAB0571002CB005 /* MadFly.swift in Sources */,
+				DC4803291AAAF8AE002CB005 /* Star.swift in Sources */,
+				DCEF505A1AACECFD00E78D30 /* Coin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9FD4371A70EF4E00091A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9FD4421A70EF4E00091A4E /* Pierre_Penguin_Escapes_the_AntarcticTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC9FD43D1A70EF4E00091A4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC9FD4211A70EF4D00091A4E /* Pierre Penguin Escapes the Antarctic */;
+			targetProxy = DC9FD43C1A70EF4E00091A4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC9FD42F1A70EF4E00091A4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC9FD4301A70EF4E00091A4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC9FD4341A70EF4E00091A4E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC9FD4351A70EF4E00091A4E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC9FD4431A70EF4E00091A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC9FD4441A70EF4E00091A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC9FD4461A70EF4E00091A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Pierre Penguin Escapes the Antarctic/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		DC9FD4471A70EF4E00091A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Pierre Penguin Escapes the Antarctic/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		DC9FD4491A70EF4E00091A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pierre Penguin Escapes the AntarcticTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pierre Penguin Escapes the Antarctic.app/Pierre Penguin Escapes the Antarctic";
+			};
+			name = Debug;
+		};
+		DC9FD44A1A70EF4E00091A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pierre Penguin Escapes the AntarcticTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pierre Penguin Escapes the Antarctic.app/Pierre Penguin Escapes the Antarctic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC9FD41D1A70EF4D00091A4E /* Build configuration list for PBXProject "Pierre Penguin Escapes the Antarctic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9FD4431A70EF4E00091A4E /* Debug */,
+				DC9FD4441A70EF4E00091A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9FD4451A70EF4E00091A4E /* Build configuration list for PBXNativeTarget "Pierre Penguin Escapes the Antarctic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9FD4461A70EF4E00091A4E /* Debug */,
+				DC9FD4471A70EF4E00091A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9FD4481A70EF4E00091A4E /* Build configuration list for PBXNativeTarget "Pierre Penguin Escapes the AntarcticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9FD4491A70EF4E00091A4E /* Debug */,
+				DC9FD44A1A70EF4E00091A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC9FD41A1A70EF4D00091A4E /* Project object */;
+}
