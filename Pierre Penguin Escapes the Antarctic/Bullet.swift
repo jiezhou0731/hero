@@ -6,11 +6,11 @@
 import SpriteKit
 
 class Bullet: SKSpriteNode, GameSprite {
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"enemies.atlas")
+    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"bullet.atlas")
     var flyAnimation = SKAction()
     let bulletSpeed = CGFloat(1000.0)
     
-    func spawn(parentNode:SKNode, position: CGPoint, size: CGSize = CGSize(width: 61, height: 29)) {
+    func spawn(parentNode:SKNode, position: CGPoint, size: CGSize = CGSize(width: 60, height: 60)) {
         parentNode.addChild(self)
         createAnimations()
         self.size = size
@@ -23,17 +23,18 @@ class Bullet: SKSpriteNode, GameSprite {
         self.physicsBody?.friction = 0.0;
         self.physicsBody?.mass = 0.0
         
-        self.physicsBody?.applyForce(CGVector(dx: 100000.0,dy: 0.0))
+        self.physicsBody?.applyForce(CGVector(dx: 30000.0,dy: 0.0))
     }
     
     func createAnimations() {
         let flyFrames:[SKTexture] = [
-            textureAtlas.textureNamed("mad-fly-1.png"),
-            textureAtlas.textureNamed("mad-fly-2.png")
+            textureAtlas.textureNamed("bullet-1.png"),
+            textureAtlas.textureNamed("bullet-2.png"),
+            textureAtlas.textureNamed("bullet-3.png")
         ]
-        let flyAction = SKAction.animateWithTextures(flyFrames, timePerFrame: 0.14)
+        let flyAction = SKAction.animateWithTextures(flyFrames, timePerFrame: 0.05)
         flyAnimation = SKAction.sequence([
-            SKAction.repeatAction(flyAction, count: 2),
+            SKAction.repeatAction(flyAction, count: 10),
             SKAction.waitForDuration(0.01),
             SKAction.removeFromParent()
         ])

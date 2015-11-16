@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		185A7A101BD5C0F9006D9855 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A0F1BD5C0F9006D9855 /* Gun.swift */; settings = {ASSET_TAGS = (); }; };
-		185A7A121BD5CE76006D9855 /* ObjectPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A111BD5CE76006D9855 /* ObjectPool.swift */; settings = {ASSET_TAGS = (); }; };
-		185A7A141BD5DB49006D9855 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A131BD5DB49006D9855 /* Bullet.swift */; settings = {ASSET_TAGS = (); }; };
+		185671E31BEFAB8500CEA15C /* bullet.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 185671E21BEFAB8500CEA15C /* bullet.atlas */; };
+		185A7A101BD5C0F9006D9855 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A0F1BD5C0F9006D9855 /* Gun.swift */; };
+		185A7A121BD5CE76006D9855 /* ObjectPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A111BD5CE76006D9855 /* ObjectPool.swift */; };
+		185A7A141BD5DB49006D9855 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A7A131BD5DB49006D9855 /* Bullet.swift */; };
 		DC12270D1A8867E1003EA64F /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12270C1A8867E1003EA64F /* Bee.swift */; };
 		DC12270F1A887A41003EA64F /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12270E1A887A41003EA64F /* GameSprite.swift */; };
 		DC16B1AC1A8F16D2005216E0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16B1AB1A8F16D2005216E0 /* Player.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185671E21BEFAB8500CEA15C /* bullet.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bullet.atlas; sourceTree = "<group>"; };
 		185A7A0F1BD5C0F9006D9855 /* Gun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
 		185A7A111BD5CE76006D9855 /* ObjectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectPool.swift; sourceTree = "<group>"; };
 		185A7A131BD5DB49006D9855 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		185A7A151BD6D84F006D9855 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				185671E21BEFAB8500CEA15C /* bullet.atlas */,
 				DC3277B91AE3827500866448 /* spark.png */,
 				DC70B00A1AF9AE2E0057C2FD /* Sound */,
 				DC8EE7361A80A7FE002304EC /* bee.atlas */,
@@ -307,6 +310,7 @@
 				DC9FD4331A70EF4E00091A4E /* Images.xcassets in Resources */,
 				DC7370951ABFBE48000EA3C5 /* EncounterBats.sks in Resources */,
 				DC9FD4311A70EF4E00091A4E /* Main.storyboard in Resources */,
+				185671E31BEFAB8500CEA15C /* bullet.atlas in Resources */,
 				DC722AF91A91926600F75DC9 /* pierre.atlas in Resources */,
 				DCEF50521AACE2B300E78D30 /* enemies.atlas in Resources */,
 				DC3277BA1AE3827500866448 /* PierrePath.sks in Resources */,
@@ -515,6 +519,7 @@
 				INFOPLIST_FILE = "Pierre Penguin Escapes the AntarcticTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fd255f13-39ee-4b18-898b-46d611dd40c4";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pierre Penguin Escapes the Antarctic.app/Pierre Penguin Escapes the Antarctic";
 			};
 			name = Debug;
@@ -530,6 +535,7 @@
 				INFOPLIST_FILE = "Pierre Penguin Escapes the AntarcticTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fd255f13-39ee-4b18-898b-46d611dd40c4";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pierre Penguin Escapes the Antarctic.app/Pierre Penguin Escapes the Antarctic";
 			};
 			name = Release;

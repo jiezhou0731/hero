@@ -23,6 +23,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         // Add the background image:
         let backgroundImage = SKSpriteNode(imageNamed: "Background-menu")
         backgroundImage.size = CGSize(width: 1024, height: 768)
+        backgroundImage.zPosition = 1
         self.addChild(backgroundImage)
 
         // Draw the name of the game:
@@ -30,12 +31,14 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         logoText.text = "Pierre Penguin"
         logoText.position = CGPoint(x: 0, y: 100)
         logoText.fontSize = 60
+        logoText.zPosition = 2
         self.addChild(logoText)
         // Add another line below:
         let logoTextBottom = SKLabelNode(fontNamed: "AvenirNext-Heavy")
         logoTextBottom.text = "Escapes the Antarctic"
         logoTextBottom.position = CGPoint(x: 0, y: 50)
         logoTextBottom.fontSize = 40
+        logoTextBottom.zPosition = 2
         self.addChild(logoTextBottom)
         
         // Build the start game button:
@@ -43,6 +46,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         startButton.size = CGSize(width: 295, height: 76)
         startButton.name = "StartBtn"
         startButton.position = CGPoint(x: 0, y: -20)
+        startButton.zPosition = 2
         self.addChild(startButton)
         
         // Add text to the start button:
@@ -52,8 +56,9 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         startText.position = CGPoint(x: 0, y: 2)
         startText.fontSize = 40
         startText.name = "StartBtn"
+        startText.zPosition = 3
         startButton.addChild(startText)
-        
+        print ("button?")
         // Pulse the start button in and out gently:
         let pulseAction = SKAction.sequence([
             SKAction.fadeAlphaTo(0.7, duration: 0.9),

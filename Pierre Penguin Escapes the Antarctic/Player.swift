@@ -1,8 +1,3 @@
-//
-//  Player.swift
-//  Pierre Penguin Escapes the Antarctic
-//
-
 import SpriteKit
 
 class Player : SKSpriteNode, GameSprite {
@@ -186,7 +181,7 @@ class Player : SKSpriteNode, GameSprite {
         
         protectiveBubbleTimeCount.position.x = self.position.x
         protectiveBubbleTimeCount.position.y = self.position.y + 50
-        
+
         // If we are flapping, apply a new force to push Pierre higher.
         if (self.flapping) {
             var forceToApply = maxFlappingForce
@@ -212,6 +207,7 @@ class Player : SKSpriteNode, GameSprite {
         
         // Set a constant velocity to the right:
         self.physicsBody?.velocity.dx = self.forwardVelocity
+        print(self.position)
     }
     
     // Begin the flapping animation, and set the flapping property to true:

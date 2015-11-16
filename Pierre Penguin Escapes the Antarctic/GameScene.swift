@@ -64,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Instantiate four Backgrounds to the backgrounds array:
         
-        /*
+        
         for i in 0...3 {
             backgrounds.append(Background())
         }
@@ -76,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         // Play the start sound:
         self.runAction(SKAction.playSoundFileNamed("Sound/StartGame.aif", waitForCompletion: false))
-        */
+        
     }
     
     override func didSimulatePhysics() {

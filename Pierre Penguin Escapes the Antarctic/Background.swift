@@ -40,6 +40,7 @@ class Background: SKSpriteNode {
             newBGNode.anchorPoint = CGPointZero
             // Position this background node:
             newBGNode.position = CGPoint(x: i * Int(backgroundSize.width), y: 0)
+            newBGNode.zPosition = 1
             // Add the node to the Background:
             self.addChild(newBGNode)
         }
