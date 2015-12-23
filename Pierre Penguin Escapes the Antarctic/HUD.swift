@@ -6,120 +6,164 @@
 import SpriteKit
 
 class HUD: SKNode {
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"hud.atlas")
-    var heartNodes:[SKSpriteNode] = []
-    let coinCountText = SKLabelNode(text: "000000")
+    let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"hud.atlas")
+    var score = NSTimeInterval(0)
+    let scoreText = SKLabelNode(text: "00:00:00")
     let restartButton = SKSpriteNode()
     let menuButton = SKSpriteNode()
     
+    let posLButton = SKSpriteNode()
+    let posRButton = SKSpriteNode()
+    let pushAButton = SKSpriteNode()
+    let pushBButton = SKSpriteNode()
+    
     func createHudNodes() {
         let screenSize = ObjectPool.gameScene!.size
-        // --- Create the coin counter ---
-        // First, create an position a bronze coin icon for the coin counter:
-        let coinTextureAtlas:SKTextureAtlas = SKTextureAtlas(named:"goods.atlas")
-        let coinIcon = SKSpriteNode(texture: coinTextureAtlas.textureNamed("coin-bronze.png"))
-        // Size and position the coin icon:
-        let coinYPos = screenSize.height - 23
-        coinIcon.size = CGSize(width: 26, height: 26)
-        coinIcon.position = CGPoint(x: 23, y: coinYPos)
-        // Configure the coin text label:
-        coinCountText.fontName = "AvenirNext-HeavyItalic"
-        coinCountText.position = CGPoint(x: 41, y: coinYPos)
-        // These two properties allow you to align the text relative to the SKLabelNode's position:
-        coinCountText.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
-        coinCountText.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
-        // Add the text label and coin icon to the HUD:
-        self.addChild(coinCountText)
-        self.addChild(coinIcon)
+        firstUpdate = true
+        scoreText.fontName = "AvenirNext-HeavyItalic"
+        scoreText.position = CGPoint(x: 10, y:  screenSize.height - 23)
+        scoreText.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        scoreText.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
+        self.addChild(scoreText)
         
-        let jumpButton = SKSpriteNode(imageNamed:"jumpButton")
-        jumpButton.name = "HUD_jumpButton"
-        jumpButton.size = CGSize(width: 100, height: 100)
-        jumpButton.position = CGPoint(x: screenSize.width - jumpButton.size.width,
-            y:jumpButton.size.height)
-        self.addChild(jumpButton)
+        posLButton.texture =  textureAtlas.textureNamed("posLButton.png")
+        posLButton.name = "HUD_posLButton"
+        posLButton.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        posLButton.size = CGSize(width: 60, height: 60)
+        posLButton.size = CGSize(width: 60, height: 60)
+        posLButton.position = CGPoint(x: posLButton.size.width,
+            y:posLButton.size.height/2)
+        self.addChild(posLButton)
         
-        // Create three heart nodes for the life meter:
-        for var index = 0; index < 3; ++index {
-            let newHeartNode = SKSpriteNode(texture: textureAtlas.textureNamed("heart-full.png"))
-            newHeartNode.size = CGSize(width: 46, height: 40)
-            // Position the heart nodes in a row, just below the coin counter:
-            let xPos = CGFloat(index * 60 + 33)
-            let yPos = screenSize.height - 66
-            newHeartNode.position = CGPoint(x: xPos, y: yPos)
-            // Keep track of the nodes in an array property on HUD:
-            heartNodes.append(newHeartNode)
-            // Add the heart nodes to the HUD:
-            self.addChild(newHeartNode)
-        }
+        posRButton.texture =  textureAtlas.textureNamed("posRButton.png")
+        posRButton.name = "HUD_posRButton"
+        posRButton.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        posRButton.size = CGSize(width: 60, height: 60)
+        posRButton.position = CGPoint(x: posRButton.size.width*2,
+            y:posRButton.size.height/2)
+        self.addChild(posRButton)
         
-        // Add the restart and menu button textures to the nodes:
-        restartButton.texture = textureAtlas.textureNamed("button-restart.png")
-        menuButton.texture = textureAtlas.textureNamed("button-menu.png")
-        // Assign node names to the buttons:
-        restartButton.name = "HUD_restartGame"
-        menuButton.name = "HUD_returnToMenu"
-        // Position the button node:
-        let centerOfHud = CGPoint(x: screenSize.width / 2, y: screenSize.height / 2)
-        restartButton.position = centerOfHud
-        menuButton.position = CGPoint(x: centerOfHud.x - 140, y: centerOfHud.y)
-        // Size the button nodes:
-        restartButton.size = CGSize(width: 140, height: 140)
-        menuButton.size = CGSize(width: 70, height: 70)
-    }
-    
-    func showButtons() {
-        // Set the button alpha to 0:
-        restartButton.alpha = 0
-        menuButton.alpha = 0
-        // Add the button nodes to the HUD:
-        self.addChild(restartButton)
-        self.addChild(menuButton)
-        // Fade in the buttons:
-        let fadeAnimation = SKAction.fadeAlphaTo(1, duration: 0.4)
-        restartButton.runAction(fadeAnimation)
-        menuButton.runAction(fadeAnimation)
-    }
-    
-    func setCoinCountDisplay(newCoinCount:Int) {
-        // We can use the NSNumberFormatter class to pad leading 0's onto the coin count:
-        let formatter = NSNumberFormatter()
+        pushAButton.texture =  textureAtlas.textureNamed("pushAButton.png")
+        pushAButton.name = "HUD_pushAButton"
+        pushAButton.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        pushAButton.size = CGSize(width: 50, height: 50)
+        pushAButton.position = CGPoint(x: screenSize.width - pushAButton.size.width,
+            y: pushAButton.size.width*2)
+        self.addChild(pushAButton)
+        
         formatter.minimumIntegerDigits = 6
-        if let coinStr = formatter.stringFromNumber(newCoinCount) {
-            // Update the label node with the new coin count:
-            coinCountText.text = coinStr
-        }
     }
     
-    func setHealthDisplay(newHealth:Int) {
-        // Create a fade SKAction to fade out any lost hearts:
-        let fadeAction = SKAction.fadeAlphaTo(0.2, duration: 0.3)
-        // Loop through each heart and update its status:
-        for var index = 0; index < heartNodes.count; ++index {
-            if index < newHealth {
-                // This heart should be full red:
-                heartNodes[index].alpha = 1
+    func gameOver() {
+        let screenSize = ObjectPool.gameScene!.size
+        let centerOfHud = CGPoint(x: screenSize.width / 2, y: screenSize.height / 2-50)
+        
+        // Remove
+        scoreText.removeFromParent()
+        posLButton.removeFromParent()
+        posRButton.removeFromParent()
+        pushAButton.removeFromParent()
+        pushBButton.removeFromParent()
+        
+        
+        // Add buttons
+        let fadeAnimation = SKAction.fadeAlphaTo(1, duration: 0.4)
+        restartButton.texture = textureAtlas.textureNamed("button-restart.png")
+        restartButton.name = "HUD_restartGame"
+        restartButton.size = CGSize(width: 140, height: 140)
+        restartButton.alpha = 0
+        restartButton.removeFromParent()
+        restartButton.runAction(fadeAnimation)
+       
+        restartButton.position =  CGPoint(x: centerOfHud.x + 40, y: centerOfHud.y+30)
+        self.addChild(restartButton)
+        
+        menuButton.position = CGPoint(x: centerOfHud.x - 80, y: centerOfHud.y+30)
+        menuButton.texture = textureAtlas.textureNamed("button-menu.png")
+        menuButton.name = "HUD_returnToMenu"
+        menuButton.size = CGSize(width: 70, height: 70)
+        menuButton.alpha = 0
+        menuButton.removeFromParent()
+        menuButton.runAction(fadeAnimation)
+        self.addChild(menuButton)
+        
+        // Add score board
+        var best = NSTimeInterval(0)
+        if (ObjectPool.gameScene?.appDefaults.objectForKey("bestScore") != nil){
+            best = ObjectPool.gameScene?.appDefaults.objectForKey("bestScore") as! NSTimeInterval
+            if (score>best) {
+                best = score
             }
-            else {
-                // This heart should be faded:
-                heartNodes[index].runAction(fadeAction)
-            }
+        } else {
+            best = score
         }
+        ObjectPool.gameScene?.appDefaults.setObject(best, forKey: "bestScore")
+        let bestScore = SKLabelNode(text: "00:00:00")
+        bestScore.text = "Best : " + timeToText(best)
+        bestScore.fontName = "AvenirNext-HeavyItalic"
+        bestScore.position = CGPoint(x: screenSize.width/2, y:  screenSize.height - 70)
+        bestScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
+        bestScore.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
+        self.addChild(bestScore)
+        
+        let currentScore = SKLabelNode(text: "00:00:00")
+        currentScore.text = "Time : " + timeToText(score)
+        currentScore.fontName = "AvenirNext-HeavyItalic"
+        currentScore.position = CGPoint(x: screenSize.width/2, y:  screenSize.height - 30)
+        currentScore.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
+        currentScore.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
+        self.addChild(currentScore)
     }
+
     
+    let formatter = NSNumberFormatter()
+
+    var addPointsForTime = false
+    
+    var point = 0.00
+    let backSpeed = CGFloat(3.0)
+    
+    var firstUpdate = true
+    var startTime = NSTimeInterval(0)
+    func update(currentTime: NSTimeInterval){
+        if (firstUpdate){
+            firstUpdate = false
+            startTime = currentTime
+        }
+        
+        // For time
+        if ((ObjectPool.gameScene?.player.isAlive) == true) {
+            score = currentTime - startTime
+            scoreText.text = timeToText(score)
+        }
+        
+        // For pos controller
+    }
+
+    var controlButtonIsMoving = false
+    var posLButtonIsPushed = false
+    var posRButtonIsPushed = false
+    
+    var pushAButtonIsPushed = false
+    var pushBButtonIsPushed = false
     func sceneTouchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)->Bool {
         for touch in (touches) {
             let location = touch.locationInNode(self)
             let nodeTouched = nodeAtPoint(location)
-            
+            ObjectPool.gameScene?.lastTouchedNode = nodeTouched
             if let gameSprite = nodeTouched as? GameSprite {
                 gameSprite.onTap()
             }
             
             // Check for HUD buttons:
             if nodeTouched.name == "HUD_restartGame" {
-                // Transition to the new scene:
-                ObjectPool.gameScene!.view?.presentScene(
+                let skView =  ObjectPool.gameViewController?.view as! SKView
+                skView.ignoresSiblingOrder = true
+                /*
+                ObjectPool.transitionScene.size = (ObjectPool.gameViewController?.view.bounds.size)!
+                skView.presentScene(ObjectPool.transitionScene, transition: .crossFadeWithDuration(0.6))
+                */
+                skView.presentScene(
                     GameScene(size: ObjectPool.gameScene!.size),
                     transition: .crossFadeWithDuration(0.6))
                 return true
@@ -130,20 +174,74 @@ class HUD: SKNode {
                     MenuScene(size: ObjectPool.gameScene!.size),
                     transition: .crossFadeWithDuration(0.6))
                 return true
-            } else if (nodeTouched.name == "HUD_jumpButton") {
-                ObjectPool.gameScene!.player.startFlapping()
+            } else if (nodeTouched.name == "HUD_posLButton") {
+                posLButtonIsPushed = true
+                return true
+            } else if (nodeTouched.name == "HUD_posRButton") {
+                posRButtonIsPushed = true
+                return true
+            } else if (nodeTouched.name == "HUD_pushAButton") {
+                print ("pushed")
+                pushAButtonIsPushed = true
+                return true
+            } else if (nodeTouched.name == "HUD_pushBButton") {
+                pushBButtonIsPushed = true
                 return true
             }
         }
         return false
     }
     
+    func sceneTouchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)->Bool {
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            let nodeTouched = nodeAtPoint(location)
+            if (nodeTouched.name == "HUD_posLButton") {
+                posLButtonIsPushed=true
+                posRButtonIsPushed=false
+                return true
+            } else if (nodeTouched.name == "HUD_posRButton") {
+                posRButtonIsPushed=true
+                posLButtonIsPushed=false
+                return true
+            } else if (nodeTouched.name == "HUD_pushAButton") {
+                return true
+            } else if (nodeTouched.name == "HUD_pushBButton") {
+                return true
+            } else {
+                posLButtonIsPushed = false
+                posRButtonIsPushed = false
+            }
+        }
+        return false
+    }
+    
+    func timeToText (var elapsedTime : NSTimeInterval) -> String{
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        let fraction = UInt8(elapsedTime * 100)
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        let strFraction = String(format: "%02d",fraction)
+        
+        return "\(strMinutes):\(strSeconds):\(strFraction)"
+    }
     func sceneTouchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) -> Bool {
         for touch in (touches) {
             let location = touch.locationInNode(self)
             let nodeTouched = nodeAtPoint(location)
-            if (nodeTouched.name == "HUD_jumpButton") {
-                ObjectPool.gameScene!.player.stopFlapping()
+            if (nodeTouched.name == "HUD_posControlButton") {
+                controlButtonIsMoving = false
+                return true
+            } else if (nodeTouched.name == "HUD_posLButton") {
+                posLButtonIsPushed = false
+                posRButtonIsPushed = false
+                return true
+            } else if (nodeTouched.name == "HUD_posRButton") {
+                posLButtonIsPushed = false
+                posRButtonIsPushed = false
                 return true
             }
         }
@@ -154,8 +252,7 @@ class HUD: SKNode {
        for touch in (touches)! {
             let location = touch.locationInNode(self)
             let nodeTouched = nodeAtPoint(location)
-            if (nodeTouched.name == "HUD_jumpButton") {
-                ObjectPool.gameScene!.player.stopFlapping()
+            if (nodeTouched.name == "HUD_posControlButton") {
                 return true
             }
         }

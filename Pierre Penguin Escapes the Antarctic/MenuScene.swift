@@ -15,7 +15,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
     let startButton = SKSpriteNode()
     
     override func didMoveToView(view: SKView) {
-        print(self.size)
+        print("MenuScene")
         // Position nodes from the center of the scene:
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         // Set a sky-blue background color:
@@ -58,7 +58,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         startText.name = "StartBtn"
         startText.zPosition = 3
         startButton.addChild(startText)
-        print ("button?")
+        
         // Pulse the start button in and out gently:
         let pulseAction = SKAction.sequence([
             SKAction.fadeAlphaTo(0.7, duration: 0.9),

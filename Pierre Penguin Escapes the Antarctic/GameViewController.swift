@@ -32,12 +32,11 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     var musicPlayer = AVAudioPlayer()
+    let btn = UIButton(type: UIButtonType.Custom)
     
-    override func viewWillLayoutSubviews(){
-        super.viewWillLayoutSubviews()
-        
-        // Build the menu scene:
-        let menuScene = MenuScene()
+    func clickMe(sender:UIButton!)
+    {
+          let menuScene = GameScene()
         let skView = self.view as! SKView
         // Ignore drawing order of child nodes (performance increase)
         skView.ignoresSiblingOrder = true
@@ -45,6 +44,24 @@ class GameViewController: UIViewController {
         menuScene.size = view.bounds.size
         // Show the menu:
         skView.presentScene(menuScene)
+        btn.removeFromSuperview()
+    }
+    override func viewDidLoad() {
+      
+    
+      btn.frame = CGRectMake(100, 100, 200, 100)
+      btn.setImage(UIImage(named: "startButton"), forState: UIControlState.Normal)
+      btn.addTarget(self, action: "clickMe:", forControlEvents: UIControlEvents.TouchUpInside)
+      self.view.addSubview(btn)
+      
+     
+    }
+    
+    override func viewWillLayoutSubviews(){
+        super.viewWillLayoutSubviews()
+        ObjectPool.gameViewController = self
+        // Build the menu scene:
+       
         
         // Start the background music:
         /*
